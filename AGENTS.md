@@ -30,3 +30,8 @@ The Automated Workforce
     Workflow: * On git push: Run all xUnit tests.
 
         On test pass: Build the project and (optional) deploy the container to your local Docker host.
+
+        #### 🤖 Status: Operational
+- **The Scribe:** Optimized with HtmlAgilityPack. Now capable of parsing 20+ jobs from complex HTML MIME sources.
+- **The Architect:** Integrated with Gemini 1.5 Flash. Prompting logic updated to reference the 'Scale AI' Support Master and 'SnowCloud' Engineering Master based on Triage results.
+- **The Operator:** GitHub Actions successfully running 'dotnet test' on every push.

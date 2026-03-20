@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ShadowStaff.Tests/ShadowStaff.Tests.csproj" />
+  <Project Path="ShadowStaff.Worker/ShadowStaff.Worker.csproj" />
+</Solution>

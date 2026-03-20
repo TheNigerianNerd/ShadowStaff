@@ -1,0 +1,33 @@
+## [ Visual Studio ]
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.userosscache
+*.sln.docstates
+
+## [ .NET ]
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## [ Secrets & Local Config ]
+# Keep your API keys out of source control!
+appsettings.Development.json
+secrets.json
+.env
+
+## [ IDEs (VS Code / JetBrains) ]
+.vscode/
+.idea/
+*.swp
+*.bak
+
+## [ OS Specific ]
+.DS_Store
+Thumbs.db
+
+## [ n8n / Docker / Node (If applicable) ]
+node_modules/
+dist/
+.n8n/

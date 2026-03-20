@@ -32,3 +32,18 @@ ShadowStaff is an automated, event-driven career assistant designed to ingest jo
     Review: n8n sends a Telegram alert with links to the drafts in Google Drive.
 
     Ship: Upon manual approval, a final PDF is generated for submission.
+
+    ### ✅ Progress Update: Sprint 1 Complete
+- [x] Initial Solution & Project Architecture (.NET 8)
+- [x] TDD Suite implemented (xUnit & Moq)
+- [x] HiringCafeParser (Scribe) validated with live payloads
+- [x] Multi-Lens Triage Logic (Support vs. Engineering)
+- [x] Secure Secret Injection via User Secrets & Environment Variables
+- [x] CI/CD Pipeline (GitHub Actions) configured for automated testing
+
+    ### 🔐 Security & Configuration
+This project uses the **.NET Configuration Provider** to handle sensitive API keys.
+
+1. **Local:** Secrets are managed via `dotnet user-secrets`.
+2. **CI/CD:** Secrets are stored in GitHub Actions as `GEMINI_API_KEY` and injected into the test environment as `Gemini__ApiKey`.
+3. **Production:** The Worker Service reads from Environment Variables on the host machine.
