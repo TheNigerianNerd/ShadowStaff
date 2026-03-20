@@ -2,9 +2,9 @@ name: ShadowStaff CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -16,17 +16,19 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        # UPDATED: Matches your project's TargetFramework
+        dotnet-version: 10.0.x 
 
     - name: Restore dependencies
       run: dotnet restore
 
     - name: Build
-      run: dotnet build --no-restore
+      # This builds the whole solution
+      run: dotnet build --no-restore --configuration Release
 
     - name: Test
-      # This block injects the secret into the test process
       env:
+        # Double underscore maps to Gemini:ApiKey in IConfiguration
         Gemini__ApiKey: ${{ secrets.GEMINI_API_KEY }}
-      run: dotnet test --no-build --verbosity normal
-      
+      # UPDATED: Points directly to the test project for clarity
+      run: dotnet test ShadowStaff.Tests/ShadowStaff.Tests.csproj --no-build --verbosity normal
